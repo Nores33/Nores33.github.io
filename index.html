@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Repositories</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,7 +39,32 @@
         .repo-link:hover {
             text-decoration: underline;
         }
+        .window {
+    	  width: 200px;
+    	  height: 200px;
+    	  background-color: #f1f1f1;
+          border: 2px solid #000;
+    	  .header {
+    	    width: inherit;
+    	    height: 30px;
+    	    background-color: #2242b2;
+    	    text-align: center;
+            color: #fff;
+    	    line-height: 30px;
+    	    cursor: move;
+    	  }
+    	  .content {
+    	    padding: 10px;
+    	  }
+      }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".window" ).draggable({ handle: ".header" });
+        } );
+    </script>
 </head>
 
 <body>
@@ -54,6 +81,15 @@
         <!-- Add more repository links as needed -->
     </div>
 
+    <!-- WIP -->
+    <div class="window" style="width: 300px; height: 200px;">
+        <div class="header">
+            <span style="float: center;">Window</span>
+            <button style="float: right; margin-right: 5px; margin-top: 4px;">X</button>
+        </div>
+        <div class="content">This is a simple window test</div>
+    </div>
+    
 </body>
 
 </html>
