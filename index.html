@@ -87,9 +87,18 @@
             <span style="float: center;">Window</span>
             <button style="float: right; margin-right: 5px; margin-top: 4px;" onclick="this.parentNode.parentNode.remove();">X</button>
         </div>
-        <div class="content">This is a simple window test</div>
+        <div class="content">
+            <img src="https://64.media.tumblr.com/016da1fe17e4448ffe5dec8245bc6de2/a56aedd6feaabeea-69/s540x810/0396db374112ada8381638997a7b4ace003c9476.png" width="80" height="80" style="float: left" draggable="false"></img>
+  	        <span style="float: right;">This is a simple window test</span>
+        </div>
     </div>
-    
+
+    <script>
+      const windows = document.querySelectorAll('.window');
+      windows.forEach(window => {
+        window.addEventListener('contextmenu', event => event.preventDefault());
+      });
+    </script>
 </body>
 
 </html>
