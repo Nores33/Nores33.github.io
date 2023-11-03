@@ -130,6 +130,7 @@
     	</div>
         <div class="taskbar">
         	<button style="float: left; margin-left: 5px; margin-top: 4px; height: 80%;">Start</button>
+            <div id="time" style="float: right; margin-right: 5px; margin-top: 11px; height: 80%;"></div>
         </div>
     </div>
 
@@ -138,6 +139,20 @@
       windows.forEach(window => {
         window.addEventListener('contextmenu', event => event.preventDefault());
       });
+      function updateTime() {
+            const timeElement = document.getElementById("time");
+            const currentTime = new Date();
+            const hours = currentTime.getHours().toString().padStart(2, "0");
+            const minutes = currentTime.getMinutes().toString().padStart(2, "0");
+            const timeString = `${hours}:${minutes}`;
+            timeElement.textContent = timeString;
+        }
+
+        // Update time every minute (60,000 milliseconds)
+        setInterval(updateTime, 60000);
+
+        // Call the function immediately to display the time without delay
+        updateTime();
     </script>
     
     <footer>
